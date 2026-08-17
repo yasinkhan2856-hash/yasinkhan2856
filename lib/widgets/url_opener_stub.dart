@@ -1,0 +1,1 @@
+void openPlatformUrl(String url) {}
