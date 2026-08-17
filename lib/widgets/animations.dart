@@ -40,6 +40,11 @@ class _TypewriterTextState extends State<TypewriterText> {
     });
     _blinkTimer = Timer.periodic(const Duration(milliseconds: 530), (_) {
       if (!mounted) return;
+      if (_chars >= widget.text.length) {
+        _blinkTimer?.cancel();
+        if (_cursorOn) setState(() => _cursorOn = false);
+        return;
+      }
       setState(() => _cursorOn = !_cursorOn);
     });
   }
@@ -59,7 +64,7 @@ class _TypewriterTextState extends State<TypewriterText> {
         children: [
           TextSpan(text: widget.text.substring(0, _chars)),
           TextSpan(
-            text: _cursorOn || !done ? '|' : ' ',
+            text: _cursorOn && !done ? '|' : ' ',
             style: const TextStyle(
               color: AppColors.accent,
               fontWeight: FontWeight.w700,
@@ -118,7 +123,10 @@ class _GradientTextState extends State<GradientText>
             Color(0xFF2563EB),
           ],
         ).createShader(bounds),
-        child: Text(widget.text, style: widget.style.copyWith(color: Colors.white)),
+        child: Text(
+          widget.text,
+          style: widget.style.copyWith(color: Colors.white),
+        ),
       );
     },
   );
@@ -202,9 +210,7 @@ class _Blob extends StatelessWidget {
     height: size,
     decoration: BoxDecoration(
       shape: BoxShape.circle,
-      gradient: RadialGradient(
-        colors: [color, color.withValues(alpha: 0)],
-      ),
+      gradient: RadialGradient(colors: [color, color.withValues(alpha: 0)]),
     ),
   );
 }
@@ -235,9 +241,10 @@ class _FloatingAnimationState extends State<FloatingAnimation>
     super.initState();
     _controller = AnimationController(vsync: this, duration: widget.duration)
       ..repeat(reverse: true);
-    _anim = Tween<double>(begin: -widget.distance, end: widget.distance).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _anim = Tween<double>(
+      begin: -widget.distance,
+      end: widget.distance,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -279,19 +286,15 @@ class _AnimatedCounterState extends State<AnimatedCounter>
   late final Animation<double> _animation;
   bool _started = false;
 
-  double get _target => double.parse(
-    widget.value.replaceAll(RegExp(r'[^0-9.]'), ''),
-  );
+  double get _target =>
+      double.parse(widget.value.replaceAll(RegExp(r'[^0-9.]'), ''));
 
   String get _suffix => widget.value.replaceAll(RegExp(r'[0-9.]'), '');
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: widget.duration,
-    );
+    _controller = AnimationController(vsync: this, duration: widget.duration);
     _animation = CurvedAnimation(
       parent: _controller,
       curve: Curves.easeOutCubic,

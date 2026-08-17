@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 import '../data/portfolio_data.dart';
 import '../theme/app_theme.dart';
@@ -61,7 +62,8 @@ class _ContactSectionState extends State<ContactSection> {
               'name': nameController.text.trim(),
               '_replyto': emailController.text.trim(),
               'email': emailController.text.trim(),
-              '_subject': 'Portfolio enquiry from ${nameController.text.trim()}',
+              '_subject':
+                  'Portfolio enquiry from ${nameController.text.trim()}',
               'message': messageController.text.trim(),
             }),
           )
@@ -163,25 +165,25 @@ class _ContactInfo extends StatelessWidget {
       ),
       const SizedBox(height: 28),
       _ContactRow(
-        icon: Icons.code,
+        icon: FontAwesomeIcons.github,
         label: 'GitHub',
         value: 'github.com/yasinkhan2856-hash',
         url: PortfolioData.github,
       ),
       _ContactRow(
-        icon: Icons.work_outline,
+        icon: FontAwesomeIcons.linkedinIn,
         label: 'LinkedIn',
         value: 'linkedin.com/in/yasinkhan2856',
         url: PortfolioData.linkedin,
       ),
       _ContactRow(
-        icon: Icons.camera_alt_outlined,
+        icon: FontAwesomeIcons.instagram,
         label: 'Instagram',
         value: 'instagram.com/yasin_khan_285',
         url: PortfolioData.instagram,
       ),
       _ContactRow(
-        icon: Icons.chat_bubble_outline,
+        icon: FontAwesomeIcons.snapchat,
         label: 'Snapchat',
         value: 'snapchat.com/add/yasin_k1284',
         url: PortfolioData.snapchat,
@@ -412,17 +414,17 @@ class _StatusDialog extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.w800,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 8),
           Text(
             subtitle,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: AppColors.textSecondary,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(color: AppColors.textSecondary),
           ),
           const SizedBox(height: 22),
           FilledButton(

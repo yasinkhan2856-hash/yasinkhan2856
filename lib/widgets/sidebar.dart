@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../data/portfolio_data.dart';
 import '../theme/app_theme.dart';
 import 'common.dart';
@@ -236,22 +237,22 @@ class _SocialRow extends StatelessWidget {
     runSpacing: 8,
     children: [
       _SocialIcon(
-        icon: Icons.code,
+        icon: FontAwesomeIcons.github,
         tooltip: 'GitHub',
         onTap: () => onOpen(PortfolioData.github),
       ),
       _SocialIcon(
-        icon: Icons.work_outline,
+        icon: FontAwesomeIcons.linkedinIn,
         tooltip: 'LinkedIn',
         onTap: () => onOpen(PortfolioData.linkedin),
       ),
       _SocialIcon(
-        icon: Icons.camera_alt_outlined,
+        icon: FontAwesomeIcons.instagram,
         tooltip: 'Instagram',
         onTap: () => onOpen(PortfolioData.instagram),
       ),
       _SocialIcon(
-        icon: Icons.chat_bubble_outline,
+        icon: FontAwesomeIcons.snapchat,
         tooltip: 'Snapchat',
         onTap: () => onOpen(PortfolioData.snapchat),
       ),
