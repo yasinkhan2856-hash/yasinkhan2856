@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'data/portfolio_data.dart';
 import 'sections/about_section.dart';
@@ -117,22 +116,22 @@ class _PortfolioPageState extends State<PortfolioPage> {
                         actions: [
                           ...[
                             (
-                              FontAwesomeIcons.github,
+                              Icons.code,
                               'GitHub',
                               PortfolioData.github,
                             ),
                             (
-                              FontAwesomeIcons.linkedinIn,
+                              Icons.work_outline,
                               'LinkedIn',
                               PortfolioData.linkedin,
                             ),
                             (
-                              FontAwesomeIcons.instagram,
+                              Icons.camera_alt_outlined,
                               'Instagram',
                               PortfolioData.instagram,
                             ),
                             (
-                              FontAwesomeIcons.snapchat,
+                              Icons.chat_bubble_outline,
                               'Snapchat',
                               PortfolioData.snapchat,
                             ),
@@ -143,7 +142,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                 height: 48,
                               ),
                               padding: EdgeInsets.zero,
-                              icon: FaIcon(social.$1, size: 17),
+                              icon: Icon(social.$1, size: 17),
                               tooltip: social.$2,
                               onPressed: () =>
                                   openExternalUrl(context, social.$3),

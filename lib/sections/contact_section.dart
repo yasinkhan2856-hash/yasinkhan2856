@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 import '../data/portfolio_data.dart';
 import '../theme/app_theme.dart';
@@ -164,25 +163,25 @@ class _ContactInfo extends StatelessWidget {
       ),
       const SizedBox(height: 28),
       _ContactRow(
-        icon: FontAwesomeIcons.github,
+        icon: Icons.code,
         label: 'GitHub',
         value: 'github.com/yasinkhan2856-hash',
         url: PortfolioData.github,
       ),
       _ContactRow(
-        icon: FontAwesomeIcons.linkedinIn,
+        icon: Icons.work_outline,
         label: 'LinkedIn',
         value: 'linkedin.com/in/yasinkhan2856',
         url: PortfolioData.linkedin,
       ),
       _ContactRow(
-        icon: FontAwesomeIcons.instagram,
+        icon: Icons.camera_alt_outlined,
         label: 'Instagram',
         value: 'instagram.com/yasin_khan_285',
         url: PortfolioData.instagram,
       ),
       _ContactRow(
-        icon: FontAwesomeIcons.snapchat,
+        icon: Icons.chat_bubble_outline,
         label: 'Snapchat',
         value: 'snapchat.com/add/yasin_k1284',
         url: PortfolioData.snapchat,
