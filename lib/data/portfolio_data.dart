@@ -195,6 +195,25 @@ abstract final class PortfolioData {
       demoUrl: 'https://lnkd.in/p/dBrQqQqu',
       imageAsset: 'assets/aeropass.png',
     ),
+    Project(
+      title: 'Pizzaro Express',
+      category: 'Food / Pizza Ordering',
+      filterTag: 'Flutter',
+      description:
+          'Premium pizza ordering app with smooth animations, interactive pizza customization, animated cart, checkout, order preparation and tracking. Tap the pizza, watch the transition, customize it, order it, and track it!',
+      technologies: ['Flutter', 'Dart', 'GetX', 'MVVM'],
+      features: [
+        'Interactive pizza customization',
+        'Animated cart and checkout',
+        'Order preparation and tracking',
+        'Smooth animations and transitions',
+      ],
+      icon: Icons.local_pizza_outlined,
+      color: Color(0xFFF59E0B),
+      githubUrl: 'https://github.com/yasinkhan2856-hash/Pizaro_Express',
+      demoUrl: 'https://lnkd.in/p/dx3YeQY4',
+      imageAsset: 'assets/pizaro.jpg',
+    ),
   ];
 
   static const services = [

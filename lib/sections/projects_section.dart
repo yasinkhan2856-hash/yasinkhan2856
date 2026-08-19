@@ -55,7 +55,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                     crossAxisCount: cols,
                     crossAxisSpacing: 24,
                     mainAxisSpacing: 24,
-                    mainAxisExtent: cols == 2 ? 540 : 570,
+                    mainAxisExtent: cols == 2 ? 560 : 590,
                   ),
                   itemBuilder: (context, i) => _ProjectCard(
                     project: projects[i],
@@ -225,8 +225,6 @@ class _ProjectCard extends StatelessWidget {
                 Text(
                   project.description,
                   style: Theme.of(context).textTheme.bodyMedium,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 14),
                 Wrap(
